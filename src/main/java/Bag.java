@@ -19,7 +19,6 @@ public abstract class Bag {
     private String[] contents;
 
 
-
     /*
      * TODO: Create a constructor that takes two arguments:
      *       - a String representing the Bag's colour
@@ -29,7 +28,7 @@ public abstract class Bag {
      * be empty (e.g. numberOfContents is 0 and an empty String array for
      * its contents.)
      */
-    public Bag(String color, int capacity){
+    public Bag(String color, int capacity) {
         this.color = color;
         this.capacity = capacity;
         this.numberOfContents = 0;
@@ -54,14 +53,15 @@ public abstract class Bag {
         return this.numberOfContents;
     }
 
-    public int getCapacity(){
+    public int getCapacity() {
         return this.capacity;
     }
+
     /*
      * TODO: Create a setter function called setColor which sets the
      *       color of this bag to the given color.
      */
-    public void setColor(String color){
+    public void setColor(String color) {
         this.color = color;
     }
 
@@ -79,28 +79,26 @@ public abstract class Bag {
      *       and false otherwise.
      */
 
-    public void addItem(String item){
+    public void addItem(String item) {
         if (this.numberOfContents < this.capacity) {
             String[] contentsNew = new String[capacity];
 
-            if (this.numberOfContents == 0){
+            if (this.numberOfContents == 0) {
                 contentsNew[0] = item;
                 this.contents = contentsNew;
-                numberOfContents+=1;
-            }
-            else {
-                System.arraycopy(this.contents, 0, contentsNew, this.numberOfContents-1, this.numberOfContents);
+                numberOfContents += 1;
+            } else {
+                System.arraycopy(this.contents, 0, contentsNew, this.numberOfContents - 1, this.numberOfContents);
                 //             for(int i = 0; i < this.numberOfContents+1; i++) {
                 //                contentsNew[i] = this.contents[i];
                 //            }
                 contentsNew[numberOfContents] = item;
                 this.contents = contentsNew;
-                numberOfContents+=1;
+                numberOfContents += 1;
             }
         }
 
     }
-
 
 
     /**
@@ -108,14 +106,14 @@ public abstract class Bag {
      *       The string should be the last item added to this Bag
      *       and the item should be removed from this Bag.
      *       Remember to modify numberOfContents accordingly.
-     *
+     * <p>
      * If there are no items in this Bag, return null.
      *
      * @return
      */
 
-    public String popItem(){
-        String popped = this.contents[numberOfContents-1];
+    public String popItem() {
+        String popped = this.contents[numberOfContents - 1];
         String[] contentsNew = new String[capacity];
 
         System.arraycopy(this.contents, 0, contentsNew, this.numberOfContents - 2, this.capacity);
@@ -126,7 +124,6 @@ public abstract class Bag {
         this.numberOfContents -= 1;
         return popped;
     }
-
 
 
     /**

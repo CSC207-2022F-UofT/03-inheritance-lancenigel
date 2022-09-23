@@ -2,11 +2,11 @@
  * This file defines an child class named HandBag.
  * We have provided most of the code for this class, however,
  * you should implement the provided TODOs.
- *
+ * <p>
  * You may find the readings in chapter 3. Relationships between Classes
  * helpful while working through this exercise.
  */
-public class HandBag extends Bag{
+public class HandBag extends Bag {
 
     /**
      * Creates a new HandBag with the given color and
@@ -16,6 +16,7 @@ public class HandBag extends Bag{
      * @param capacity
      */
     private String[] contents;
+
     public HandBag(String color, int capacity) {
         /**
          * This is how we call the parent's constructor
